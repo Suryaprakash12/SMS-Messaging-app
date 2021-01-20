@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block  scripts %}
+
+{% endblock scripts %}
+{% block content %}
+<!--<a href="{% url 'message:add-contact' %}"><button class="btn btn-primary">+Add</button></a>-->
+{% for obj in object_list %}
+    <a href="{{obj.get_absolute_url}}">
+        <div class="card p-3">
+        
+        <h1>{{obj.phone}}</h1>
+        <h3>{{obj.name}}</h3>
+        
+        
+        </div>
+    </a>
+{% endfor %}
+
+{% endblock %}
